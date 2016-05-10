@@ -157,12 +157,13 @@ public class FrameDemo2 extends WindowAdapter
     protected JComponent createButtonPane() {
         JButton button = new JButton("Objetivo 1");
         button.setActionCommand(CREATE_WINDOW);
+        // clase centralizada
         button.addActionListener(this);
         defaultButton = button; //Used later to make this the frame's default button.
         
         JButton button2 = new JButton("Objetivo 2");
         button2.setActionCommand(CREATE_WINDOW);
-        
+        //clase interna sin nombre(anonima)
         button2.addActionListener(new ActionListener(){
         		public void actionPerformed(ActionEvent evt){
         	ConsultaCatalogoMySQL.createAndShowGUI();
@@ -171,6 +172,7 @@ public class FrameDemo2 extends WindowAdapter
         
         JButton button3 = new JButton("Objetivo 3");
         button3.setActionCommand(CREATE_WINDOW);
+        // clase interna con nombre
         button3.addActionListener(new ButtonListener());
         
         //Center the button in a panel with some space around it.
