@@ -162,11 +162,16 @@ public class FrameDemo2 extends WindowAdapter
         
         JButton button2 = new JButton("Objetivo 2");
         button2.setActionCommand(CREATE_WINDOW);
-        button2.addActionListener(this);
+        
+        button2.addActionListener(new ActionListener(){
+        		public void actionPerformed(ActionEvent evt){
+        	ConsultaCatalogoMySQL.createAndShowGUI();
+        		}
+        });
         
         JButton button3 = new JButton("Objetivo 3");
         button3.setActionCommand(CREATE_WINDOW);
-        button3.addActionListener(this);
+        button3.addActionListener(new ButtonListener());
         
         //Center the button in a panel with some space around it.
         JPanel pane = new JPanel(); //use default FlowLayout
@@ -179,6 +184,18 @@ public class FrameDemo2 extends WindowAdapter
 
         return pane;
     }
+    
+    class ButtonListener implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			new Ventana().setVisible(true);
+			
+		}
+    	
+    }
+    
+    
+    
 
     //Handle action events from all the buttons.
     public void actionPerformed(ActionEvent e) {
