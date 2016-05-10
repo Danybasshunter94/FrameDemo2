@@ -173,7 +173,7 @@ public class FrameDemo2 extends WindowAdapter
         JButton button3 = new JButton("Objetivo 3");
         button3.setActionCommand(CREATE_WINDOW);
         // clase interna con nombre
-        button3.addActionListener(new ButtonListener());
+        button3.addActionListener(new Button3Listener());
         
         //Center the button in a panel with some space around it.
         JPanel pane = new JPanel(); //use default FlowLayout
@@ -187,7 +187,7 @@ public class FrameDemo2 extends WindowAdapter
         return pane;
     }
     
-    class ButtonListener implements ActionListener{
+    class Button3Listener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			new Ventana().setVisible(true);
